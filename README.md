@@ -6,6 +6,8 @@ Desafio DIO Programação Orientada a Objetos Modelagem e Diagramação de um Co
 ```mermaid
 classDiagram
     class ReprodutorMusical {
+        -musicaAtual:Musica
+        -musicas:List<Musica>
         +tocar()
         +pausar()
         +selecionarMusica(String musica)
@@ -18,6 +20,8 @@ classDiagram
     }
 
     class NavegadorInternet {
+        -linkAtual:URL
+        -linksAbertos:List<URL>
         +exibirPagina(String url)
         +adicionarNovaAba(URL url)
         +atualizarPagina()
@@ -29,6 +33,11 @@ classDiagram
         #navegador:NavegadorInternet
     }
 
+    class Musica {
+        -titulo:String
+        -autor:String
+    }
+
     class URL {
         -link:String
     }
@@ -36,6 +45,8 @@ classDiagram
     iPhone --> ReprodutorMusical
     iPhone --> AparelhoTelefonico
     iPhone --> NavegadorInternet
+    Musica --> ReprodutorMusical
+    URL --> NavegadorInternet
 ```
 
 
