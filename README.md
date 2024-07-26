@@ -19,11 +19,18 @@ classDiagram
 
     class NavegadorInternet {
         +exibirPagina(String url)
-        +adicionarNovaAba()
+        +adicionarNovaAba(URL url)
         +atualizarPagina()
     }
 
     class iPhone {
+        #reprodutor:ReprodutorMusical
+        #telefone:AparelhoTelefonico
+        #navegador:NavegadorInternet
+    }
+
+    class URL {
+        -link:String
     }
 
     iPhone --> ReprodutorMusical
